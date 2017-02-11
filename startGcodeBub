@@ -1,0 +1,24 @@
+;Sliced at: {day} {date} {time}
+;Basic settings: Layer height: {layer_height} Walls: {wall_thickness} Fill: {fill_density}
+;Print time: {print_time}
+;Filament used: {filament_amount}m {filament_weight}g
+M140 S{print_bed_temperature} ;consigne temperature plateau
+M104 S{print_temperature}     ;consigne temperature tete
+G21                     ;metrique
+G90                     ;absolu
+M82                     ;extrudeur en mode absolu
+M107                    ;ventilateur off
+G28 Z0                  ;Z vers origine machine
+G28 X0 Y0               ;X et Y vers origine
+G1 X90 Y195             ;positionne tete devant au centre
+G1 Z1.0 F{travel_speed} ;move the platform down 15mm
+M190 S{print_bed_temperature} ;consigne temperature plateau
+M109 S{print_temperature}     ;consigne temperature tete
+G92 E0                  ;fixe le 0 du filament
+G1 F40 E4               ;extrude 3mm
+G92 E0                  ;init longueur filament
+G1 F4200                ;fixe vitesse generique d'avance
+G1 Z5.3                 ;remonte tete EN TENANT COMPTE DU RATTRAPAGE : Zx - (Zy du G92) = 2 lignes dessous
+G1 Y90                  ;remet la tete au centre
+G92 X90 Y90 Z5          ;redonne les coordonnees du plateau : surtout "Z" corrigee
+G1 F{travel_speed}
