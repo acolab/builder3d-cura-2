@@ -1,0 +1,17 @@
+{
+    "id": "builder3d_2nd",
+    "version": 2,
+    "name": "Avant",
+    "inherits": "fdmextruder",
+    "metadata": {
+        "machine": "builder3d",
+        "position": "1"
+    },
+
+    "overrides": {
+        "extruder_nr": {
+            "default_value": 1,
+            "maximum_value": "1"
+        }
+    }
+}
