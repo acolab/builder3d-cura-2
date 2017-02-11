@@ -1,0 +1,13 @@
+#!/bin/bash
+
+TARGET="/usr/share/cura/resources"
+FILES="
+definitions/builder3d.def.json
+extruders/builder3d_1st.def.json
+extruders/builder3d_2nd.def.json
+"
+
+for i in $FILES
+do
+  sudo cp "$i" "$TARGET/$i"
+done
