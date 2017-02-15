@@ -7,7 +7,7 @@ G1 Z5.0 F120 ;move the platform down 15mm
 G0 F3600 X100 Y0 Z1
 
 G92 E0                  ;fixe le 0 du filament
-G1 F40 E4               ;extrude 3mm
+G1 F40 E10              ;extrude
 G92 E0                  ;init longueur filament
 
 G1 F4200                ;fixe vitesse generique d'avance
